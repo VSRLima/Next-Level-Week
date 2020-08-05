@@ -1,0 +1,37 @@
+.select-block label, .input-block label, .textarea-block label {
+    font-size: 1.4rem;
+    color: var(--color-text-complement);
+}
+.organizacao {
+    display: flex;
+    flex-direction: row;
+}
+.select-block select, .input-block input, .textarea-block textarea {
+    width: 100%;
+    height: 5.6rem;
+    margin-top: 0.8rem;
+    border-radius: 0.8rem;
+    background: var(--color-input-background);
+    border: 1px solid var(--color-line-in-white);
+    outline: 0;/*é quando vc seleciona caixa q aparece uma caixa de fora, mas com isso vc tira <3*/
+    padding: 0 1.6rem;
+    font: 1.6rem Archivo;
+}
+.textarea-block textarea {
+    padding: 1.2rem 1.6rem;
+    height: 16rem;
+    resize: vertical;
+}
+.input-block  {
+    position: relative;
+}
+/*Para que a linha definada abaixo fique dentro da caixa de input HORA é preciso q o seu "pai", o .input-block, seja definido como position:relative, pois assim a linha q está com um position: absolut; seja criada dentro do pai, e n fora dele*/
+.input-block:focus-within::after, .textarea-block:focus-within::after {/*Isso aq é pra definir a barrinha de foco q aparece abaixo da caixa de input de HORA. Focus-within= é o foco q o pc dá quando vc clica na caixa. ::after=pseudo-elemento q vai criar um elemento HTML somente quando o campo desejado estiver em foco*/
+    content: "";/*Conteudo do elemento, q pode ser vazio e é obrigatório*/
+    width: calc(100% - 3.2rem);/*É uma maneira de fazer cálculo dentro do CSS, onde essa função vai pegar o 100% de largura disponível(foi definido antes) e diminuir por 3.2rem e assim definir sua largura*/
+    height: 2px;
+    background: var(--color-primary-light);
+    position: absolute;
+    left: 1.6rem;
+    bottom: 0;
+}
