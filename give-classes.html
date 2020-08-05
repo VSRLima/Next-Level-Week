@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="Style/partials/page-give-class.css">
     <link rel="stylesheet" href="Style/partials/form.css">
     <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&amp;family=Poppins:wght@400;600&amp;display=swap" rel="stylesheet">
-    <script src="Script/add-field.js" defer></script>
+    
     <title>Proffy | Sua plataforma de estudos online</title>
 </head>
 <body id="page-give-classes">
@@ -69,7 +69,7 @@
                 </fieldset>
                 <fieldset id="schedule-itens">
                     <legend>Horários disponíveis
-                        <button id="add-time">+ Novo Horário</button>
+                        <button id="add-time" type="button">+ Novo Horário</button>
                     </legend>
                     <div class="schedule-item">
                         <div class="select-block">
@@ -94,29 +94,7 @@
                             <input type="time" name="time_to[]" required>
                         </div>
                     </div>
-                    <div class="schedule-item">
-                        <div class="select-block">
-                            <label for="weekday">Dia da semana</label>
-                            <select name="weekday[]" required><!--Pro backend o name="weekday[]" significa q ele pode ser enviado pra lá com mais de um valor-->
-                                <option value="">Selecione um opção</option>
-                                <option value="0">Domingo</option>
-                                <option value="1">Segunda-feira</option>
-                                <option value="2">Terça-feira</option>
-                                <option value="3">Quarta-feira</option>
-                                <option value="4">Quinta-feira</option>
-                                <option value="5">Sexta-feira</option>
-                                <option value="6">Sábado</option>
-                            </select>
-                        </div>
-                        <div class="input-block">
-                            <label for="time_from">Das</label>
-                            <input type="time" name="time_from[]" required>
-                        </div>
-                        <div class="input-block">
-                            <label for="time_to">Até</label>
-                            <input type="time" name="time_to[]" required>
-                        </div>
-                    </div>
+                    
                 </fieldset>
             </form>
             <footer>
@@ -128,6 +106,7 @@
                 <button type="submit" form="create-class">Salvar cadastro</button>
             </footer>
         </main>  
-    </div>    
+    </div> 
+    <script src="Script/addField.js"></script>   
 </body>
 </html>
