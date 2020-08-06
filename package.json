@@ -1,0 +1,23 @@
+{
+  "name": "NLW",
+  "version": "1.0.0",
+  "description": "Here are my exercises done with an event called [Next Level Week](https://blog.rocketseat.com.br/primeira-next-level-week/), that's teach us about coding, how to deal with an interview and etc. These exercises are a project that we're doing during a week(08/03 until 08/07), that's a site for a plataform called Proffy.\r ## How to clone this repository\r 1. Create a folder that will receive this repository in your computer.\r 2. Open your terminal search for your folder and type `git clone` my repo.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vinicius-de-Souza-Reis-Lima/Next-Level-Week.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Vinicius-de-Souza-Reis-Lima/Next-Level-Week/issues"
+  },
+  "homepage": "https://github.com/Vinicius-de-Souza-Reis-Lima/Next-Level-Week#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
