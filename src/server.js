@@ -47,23 +47,28 @@ const weekdays = [
     "Sábado",
 ]
 //Config of pages routes requests
+//Here we're adjusting the couting of number, because every programming language starts to count with 0, but, when we use loop.index, or other type, they starts with one, so to put this in the array, we had do this function to catch every data in the array.
 function getSubject(subjectNumber) {
     const position = +subjectNumber - 1
     return subjects[position]
 }
+//A function to open the file index.html
 function pageLanding(req, res)  {
     return res.render("index.html")
 }
+//A function to open the file study.html
 //Render is a property of nunjucks
 function pageStudy(req,res) {
     const filters = req.query //It's the way to get the request from the bronswer that comes after ?. They come as objects, you can see it from console.log(req.query)
-    return res.render("study.html", {proffys, filters, subjects, weekdays})
+    return res.render("study.html", {proffys, filters, subjects, weekdays}) //To send those templates that you defined right in the beginning.
 }
+//A function to open the file give-classes.html
 function pageGiveClasses(req, res) {
+    //Catching what the bronswer is sending for request
     const data = req.query
     // Transforming those datas in arrays([]), and checking if there are elements
     const isNotEmpty = Object.keys(data).length > 0
-    //if data != [ ], add to subjects
+    //if data != [ ], add to subjects, and send theses subjects as another template to the page study
     if (isNotEmpty) {
         data.subject = getSubject(data.subject)
         proffys.push(data)
@@ -81,10 +86,12 @@ nunjucks.configure('src/views', {
     express: server,
     noCache: true,
 })
-//Configuration of server(routes)
+//Configuration of server
 server.use(express.static("public"))
+//Configuration of routes
 .get("/", pageLanding)
 .get("/study", pageStudy)
 .get("/give-classes", pageGiveClasses)
+//Opening a server with that port:5000
 .listen(5000)
 
