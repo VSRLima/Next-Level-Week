@@ -3,5 +3,5 @@ Here are my exercises done with an event called [Next Level Week](https://blog.r
 ## How to clone this repository
 1. Create a folder that will receive this repository in your computer.
 2. Open your terminal search for your folder and type `git clone` my repo. 
-
+*
 
